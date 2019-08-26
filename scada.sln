@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "awp", "awp\awp.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core", "core\core.csproj", "{F99312FF-DB49-4E64-8595-2281850893C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opcclient", "opcclient\opcclient.csproj", "{475C1997-E1C1-4C91-B30B-479C5BB2E832}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{F99312FF-DB49-4E64-8595-2281850893C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F99312FF-DB49-4E64-8595-2281850893C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F99312FF-DB49-4E64-8595-2281850893C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{475C1997-E1C1-4C91-B30B-479C5BB2E832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{475C1997-E1C1-4C91-B30B-479C5BB2E832}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{475C1997-E1C1-4C91-B30B-479C5BB2E832}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{475C1997-E1C1-4C91-B30B-479C5BB2E832}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
