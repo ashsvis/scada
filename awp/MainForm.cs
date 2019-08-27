@@ -27,13 +27,6 @@ namespace awp
             Size = new Size();
             Location = new Point();
 
-            //var GlobalOPCServer = new OPCServerClass();
-            //Array ServerList = (Array)GlobalOPCServer.GetOPCServers("");
-            //for (int i = 1; i <= ServerList.Length; i++)
-            //{
-            //    //comboBox1.Items.Add(ServerList.GetValue(i).ToString());
-            //}
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -52,7 +45,7 @@ namespace awp
             tcpChannel1.Open();
 
             opcServer = new OPCServer();
-
+            
             object opc_servers = opcServer.GetOPCServers();
             var servers = (Array)opc_servers;
             foreach (var item in servers)
@@ -63,12 +56,13 @@ namespace awp
 
             opcServer.Connect("Graybox.Simulator"); //Lectus.OPC.1
 
-            int count;
-            Array propertyIds = Array.CreateInstance(typeof(object), 1000);
-            Array descriptions = Array.CreateInstance(typeof(object), 1000);
-            Array dataTypes = Array.CreateInstance(typeof(object), 1000);
-            opcServer.QueryAvailableProperties("Graybox.Simulator", out count, out propertyIds, out descriptions, out dataTypes);
+            var browser = opcServer.CreateBrowser();
+            browser.ShowBranches();
 
+            foreach (var item in browser)
+            {
+                Console.WriteLine(item);
+            }
 
             // Then a Object group because to add an item changed event.
             var opcGroups = opcServer.OPCGroups;
@@ -76,7 +70,7 @@ namespace awp
             // The item changed event.
             opcGroup.DataChange += new DIOPCGroupEvent_DataChangeEventHandler(opcGroup_DataChange);
             // Now the Iteem
-            opcGroup.OPCItems.AddItem("{tag name or address (like {plc name on server}!%mw0)}", 1);
+            opcGroup.OPCItems.AddItem("numeric.random.double", 0);
             // Update rate and other miscellaneous
             opcGroup.UpdateRate = 10;
             opcGroup.IsActive = true;
