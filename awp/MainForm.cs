@@ -1,4 +1,5 @@
 ﻿using core;
+using OPCAutomation;
 using System;
 using System.Data;
 using System.Diagnostics;
@@ -17,11 +18,21 @@ namespace awp
         private ModbusTcpChannel tcpChannel;
         private ModbusTcpChannel tcpChannel1;
 
+        private OPCServer opcServer;
+
+
         public MainForm()
         {
             InitializeComponent();
             Size = new Size();
             Location = new Point();
+
+            //var GlobalOPCServer = new OPCServerClass();
+            //Array ServerList = (Array)GlobalOPCServer.GetOPCServers("");
+            //for (int i = 1; i <= ServerList.Length; i++)
+            //{
+            //    //comboBox1.Items.Add(ServerList.GetValue(i).ToString());
+            //}
 
         }
 
@@ -40,11 +51,55 @@ namespace awp
             tcpChannel1 = new ModbusTcpChannel("192.168.0.22");
             tcpChannel1.Open();
 
+            opcServer = new OPCServer();
+
+            object opc_servers = opcServer.GetOPCServers();
+            var servers = (Array)opc_servers;
+            foreach (var item in servers)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            opcServer.Connect("Graybox.Simulator"); //Lectus.OPC.1
+
+            int count;
+            Array propertyIds = Array.CreateInstance(typeof(object), 1000);
+            Array descriptions = Array.CreateInstance(typeof(object), 1000);
+            Array dataTypes = Array.CreateInstance(typeof(object), 1000);
+            opcServer.QueryAvailableProperties("Graybox.Simulator", out count, out propertyIds, out descriptions, out dataTypes);
+
+
+            // Then a Object group because to add an item changed event.
+            var opcGroups = opcServer.OPCGroups;
+            var opcGroup = opcGroups.Add("OPCGroup1");
+            // The item changed event.
+            opcGroup.DataChange += new DIOPCGroupEvent_DataChangeEventHandler(opcGroup_DataChange);
+            // Now the Iteem
+            opcGroup.OPCItems.AddItem("{tag name or address (like {plc name on server}!%mw0)}", 1);
+            // Update rate and other miscellaneous
+            opcGroup.UpdateRate = 10;
+            opcGroup.IsActive = true;
+            opcGroup.IsSubscribed = true;
+
+
             LoadPanelForms();
+        }
+
+        private void opcGroup_DataChange(int TransactionID, int NumItems, ref Array ClientHandles, ref Array ItemValues, ref Array Qualities, ref Array TimeStamps)
+        {
+            for (int i = 1; i <= NumItems; i++){
+                if ((Convert.ToInt32(ClientHandles.GetValue(i)) == 1))
+                {
+                    this.Text = ItemValues.GetValue(i).ToString();
+                }
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            opcServer.Disconnect();
+
             tcpChannel.Close();
             tcpChannel1.Close();
         }
