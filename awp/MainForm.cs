@@ -35,6 +35,11 @@ namespace awp
             var process = RunningInstance();
             if (process != null) { Application.Exit(); return; }
             #endregion
+
+            NpgsqHelper.CreateNotExistDatabase("test");
+            NpgsqHelper.CreatePointsTable("test");
+
+            /*
             tcpChannel = new ModbusTcpChannel();
             tcpChannel.AddToQueue(new ModbusRegister() { Active = true });
             tcpChannel.AddToQueue(new ModbusInput() { Active = true });
@@ -62,6 +67,7 @@ namespace awp
             foreach (var item in browser)
             {
                 Console.WriteLine(item);
+
             }
 
             // Then a Object group because to add an item changed event.
@@ -70,12 +76,19 @@ namespace awp
             // The item changed event.
             opcGroup.DataChange += new DIOPCGroupEvent_DataChangeEventHandler(opcGroup_DataChange);
             // Now the Iteem
-            opcGroup.OPCItems.AddItem("numeric.random.double", 0);
+            try
+            {
+                opcGroup.OPCItems.AddItem("numeric.random.double", 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             // Update rate and other miscellaneous
             opcGroup.UpdateRate = 10;
             opcGroup.IsActive = true;
             opcGroup.IsSubscribed = true;
-
+            */
 
             LoadPanelForms();
         }
@@ -92,10 +105,12 @@ namespace awp
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            /*
             opcServer.Disconnect();
 
             tcpChannel.Close();
             tcpChannel1.Close();
+            */
         }
 
         private void LoadPanelForms()
