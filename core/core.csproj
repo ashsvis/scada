@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Npgsql">
+      <HintPath>..\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,7 @@
     <Compile Include="Modbus\ModbusRegister.cs" />
     <Compile Include="Modbus\ModbusTcpChannel.cs" />
     <Compile Include="Modbus\ModbusValue.cs" />
+    <Compile Include="NpgsqHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TcpSocketChannel.cs" />
   </ItemGroup>

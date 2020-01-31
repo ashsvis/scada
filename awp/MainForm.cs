@@ -1,5 +1,4 @@
 ﻿using core;
-using OPCAutomation;
 using System;
 using System.Data;
 using System.Diagnostics;
@@ -18,7 +17,7 @@ namespace awp
         private ModbusTcpChannel tcpChannel;
         private ModbusTcpChannel tcpChannel1;
 
-        private OPCServer opcServer;
+        //private OPCServer opcServer;
 
 
         public MainForm()
@@ -36,8 +35,9 @@ namespace awp
             if (process != null) { Application.Exit(); return; }
             #endregion
 
-            NpgsqHelper.CreateNotExistDatabase("test");
-            NpgsqHelper.CreatePointsTable("test");
+
+            //NpgsqHelper.CreateNotExistDatabase("test");
+            //NpgsqHelper.CreatePointsTable("test");
 
             /*
             tcpChannel = new ModbusTcpChannel();
