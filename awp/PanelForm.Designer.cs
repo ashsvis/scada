@@ -86,7 +86,7 @@
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(180, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(109, 22);
             this.tsmiExit.Text = "Выход";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
@@ -96,6 +96,7 @@
             this.mainStatus.Name = "mainStatus";
             this.mainStatus.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
             this.mainStatus.Size = new System.Drawing.Size(933, 22);
+            this.mainStatus.SizingGrip = false;
             this.mainStatus.TabIndex = 1;
             this.mainStatus.Text = "statusStrip1";
             // 

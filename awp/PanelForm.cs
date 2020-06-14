@@ -15,7 +15,7 @@ namespace awp
             InitializeComponent();
         }
 
-        private void PanelForm_Load(object sender, System.EventArgs e)
+        private void PanelForm_Load(object sender, EventArgs e)
         {
             UpdateClock();
         }
@@ -26,12 +26,12 @@ namespace awp
             if (e.CloseReason == CloseReason.UserClosing) e.Cancel = true;
         }
 
-        private void tsmiExit_Click(object sender, System.EventArgs e)
+        private void tsmiExit_Click(object sender, EventArgs e)
         {
             Host.Close();
         }
 
-        private void timerClock_Tick(object sender, System.EventArgs e)
+        private void timerClock_Tick(object sender, EventArgs e)
         {
             UpdateClock();
         }
