@@ -349,6 +349,7 @@
             this.tsmiDatabaseEditor.Name = "tsmiDatabaseEditor";
             this.tsmiDatabaseEditor.Size = new System.Drawing.Size(209, 22);
             this.tsmiDatabaseEditor.Text = "База данных";
+            this.tsmiDatabaseEditor.Click += new System.EventHandler(this.tsmiDatabaseEditor_Click);
             // 
             // tsmiStorageGroups
             // 

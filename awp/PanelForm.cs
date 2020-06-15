@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awp.View;
+using System;
 using System.Windows.Forms;
 
 namespace awp
@@ -39,6 +40,12 @@ namespace awp
         private void UpdateClock()
         {
             lbSystemTime.Text = DateTime.Now.ToString("dd.MM.yyyy ddd HH.mm.ss");
+        }
+
+        private void tsmiDatabaseEditor_Click(object sender, EventArgs e)
+        {
+            pnlWorkplace.Controls.Clear();
+            pnlWorkplace.Controls.Add(new ucBrowserDatabase() { Dock = DockStyle.Fill });
         }
     }
 }
