@@ -39,6 +39,36 @@
             this.lbCaption = new System.Windows.Forms.Label();
             this.lbSystemTime = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.tsmiLogs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiStorage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTuning = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCommonView = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLogin = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOtherPrograms = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiAlarmLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSwitchLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiAlarmlogStorage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSwitchlogStorage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUserActionslog = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSystemLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrends = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTables = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiReportStorage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDatabaseEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiStorageGroups = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSystemTuning = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSchemeEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReportEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUserEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiActivation = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.tlpCaption.SuspendLayout();
@@ -67,7 +97,11 @@
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiSystem});
+            this.tsmiSystem,
+            this.tsmiLogs,
+            this.tsmiStorage,
+            this.tsmiTuning,
+            this.tsmiHelp});
             this.mainMenu.Location = new System.Drawing.Point(0, 25);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -78,6 +112,10 @@
             // tsmiSystem
             // 
             this.tsmiSystem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCommonView,
+            this.tsmiLogin,
+            this.tsmiOtherPrograms,
+            this.toolStripMenuItem1,
             this.tsmiExit});
             this.tsmiSystem.Name = "tsmiSystem";
             this.tsmiSystem.Size = new System.Drawing.Size(66, 20);
@@ -86,7 +124,7 @@
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(109, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(182, 22);
             this.tsmiExit.Text = "Выход";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
@@ -158,6 +196,207 @@
             this.timerClock.Interval = 1000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
+            // tsmiLogs
+            // 
+            this.tsmiLogs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAlarmLog,
+            this.tsmiSwitchLog,
+            this.toolStripMenuItem2,
+            this.tsmiAlarmlogStorage,
+            this.tsmiSwitchlogStorage,
+            this.tsmiUserActionslog,
+            this.toolStripMenuItem3,
+            this.tsmiSystemLog});
+            this.tsmiLogs.Name = "tsmiLogs";
+            this.tsmiLogs.Size = new System.Drawing.Size(72, 20);
+            this.tsmiLogs.Text = "Журналы";
+            // 
+            // tsmiStorage
+            // 
+            this.tsmiStorage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTrends,
+            this.tsmiTables,
+            this.tsmiReports,
+            this.toolStripMenuItem4,
+            this.tsmiReportStorage});
+            this.tsmiStorage.Name = "tsmiStorage";
+            this.tsmiStorage.Size = new System.Drawing.Size(53, 20);
+            this.tsmiStorage.Text = "Архив";
+            // 
+            // tsmiTuning
+            // 
+            this.tsmiTuning.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDatabaseEditor,
+            this.tsmiStorageGroups,
+            this.tsmiSystemTuning,
+            this.toolStripMenuItem5,
+            this.tsmiSchemeEditor,
+            this.tsmiReportEditor,
+            this.tsmiUserEditor});
+            this.tsmiTuning.Name = "tsmiTuning";
+            this.tsmiTuning.Size = new System.Drawing.Size(78, 20);
+            this.tsmiTuning.Text = "Настройка";
+            // 
+            // tsmiHelp
+            // 
+            this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAbout,
+            this.tsmiActivation});
+            this.tsmiHelp.Name = "tsmiHelp";
+            this.tsmiHelp.Size = new System.Drawing.Size(68, 20);
+            this.tsmiHelp.Text = "Помощь";
+            // 
+            // tsmiCommonView
+            // 
+            this.tsmiCommonView.Name = "tsmiCommonView";
+            this.tsmiCommonView.Size = new System.Drawing.Size(182, 22);
+            this.tsmiCommonView.Text = "Общий вид";
+            // 
+            // tsmiLogin
+            // 
+            this.tsmiLogin.Name = "tsmiLogin";
+            this.tsmiLogin.Size = new System.Drawing.Size(182, 22);
+            this.tsmiLogin.Text = "Регистрация";
+            // 
+            // tsmiOtherPrograms
+            // 
+            this.tsmiOtherPrograms.Name = "tsmiOtherPrograms";
+            this.tsmiOtherPrograms.Size = new System.Drawing.Size(182, 22);
+            this.tsmiOtherPrograms.Text = "Другие программы";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(179, 6);
+            // 
+            // tsmiAlarmLog
+            // 
+            this.tsmiAlarmLog.Name = "tsmiAlarmLog";
+            this.tsmiAlarmLog.Size = new System.Drawing.Size(240, 22);
+            this.tsmiAlarmLog.Text = "Аварийные сообщения";
+            // 
+            // tsmiSwitchLog
+            // 
+            this.tsmiSwitchLog.Name = "tsmiSwitchLog";
+            this.tsmiSwitchLog.Size = new System.Drawing.Size(240, 22);
+            this.tsmiSwitchLog.Text = "Переключения";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(237, 6);
+            // 
+            // tsmiAlarmlogStorage
+            // 
+            this.tsmiAlarmlogStorage.Name = "tsmiAlarmlogStorage";
+            this.tsmiAlarmlogStorage.Size = new System.Drawing.Size(240, 22);
+            this.tsmiAlarmlogStorage.Text = "Архив аварийных сообщений";
+            // 
+            // tsmiSwitchlogStorage
+            // 
+            this.tsmiSwitchlogStorage.Name = "tsmiSwitchlogStorage";
+            this.tsmiSwitchlogStorage.Size = new System.Drawing.Size(240, 22);
+            this.tsmiSwitchlogStorage.Text = "Архив переключений";
+            // 
+            // tsmiUserActionslog
+            // 
+            this.tsmiUserActionslog.Name = "tsmiUserActionslog";
+            this.tsmiUserActionslog.Size = new System.Drawing.Size(240, 22);
+            this.tsmiUserActionslog.Text = "Действия пользователей";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(237, 6);
+            // 
+            // tsmiSystemLog
+            // 
+            this.tsmiSystemLog.Name = "tsmiSystemLog";
+            this.tsmiSystemLog.Size = new System.Drawing.Size(240, 22);
+            this.tsmiSystemLog.Text = "Системые сообщения";
+            // 
+            // tsmiTrends
+            // 
+            this.tsmiTrends.Name = "tsmiTrends";
+            this.tsmiTrends.Size = new System.Drawing.Size(180, 22);
+            this.tsmiTrends.Text = "Графики";
+            // 
+            // tsmiTables
+            // 
+            this.tsmiTables.Name = "tsmiTables";
+            this.tsmiTables.Size = new System.Drawing.Size(180, 22);
+            this.tsmiTables.Text = "Таблицы";
+            // 
+            // tsmiReports
+            // 
+            this.tsmiReports.Name = "tsmiReports";
+            this.tsmiReports.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReports.Text = "Отчёты";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(177, 6);
+            // 
+            // tsmiReportStorage
+            // 
+            this.tsmiReportStorage.Name = "tsmiReportStorage";
+            this.tsmiReportStorage.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReportStorage.Text = "Архив отчётов";
+            // 
+            // tsmiDatabaseEditor
+            // 
+            this.tsmiDatabaseEditor.Name = "tsmiDatabaseEditor";
+            this.tsmiDatabaseEditor.Size = new System.Drawing.Size(209, 22);
+            this.tsmiDatabaseEditor.Text = "База данных";
+            // 
+            // tsmiStorageGroups
+            // 
+            this.tsmiStorageGroups.Name = "tsmiStorageGroups";
+            this.tsmiStorageGroups.Size = new System.Drawing.Size(209, 22);
+            this.tsmiStorageGroups.Text = "Группы параметров";
+            // 
+            // tsmiSystemTuning
+            // 
+            this.tsmiSystemTuning.Name = "tsmiSystemTuning";
+            this.tsmiSystemTuning.Size = new System.Drawing.Size(209, 22);
+            this.tsmiSystemTuning.Text = "Настройка системы";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(206, 6);
+            // 
+            // tsmiSchemeEditor
+            // 
+            this.tsmiSchemeEditor.Name = "tsmiSchemeEditor";
+            this.tsmiSchemeEditor.Size = new System.Drawing.Size(209, 22);
+            this.tsmiSchemeEditor.Text = "Редактор мнемосхем";
+            // 
+            // tsmiReportEditor
+            // 
+            this.tsmiReportEditor.Name = "tsmiReportEditor";
+            this.tsmiReportEditor.Size = new System.Drawing.Size(209, 22);
+            this.tsmiReportEditor.Text = "Редактор отчётов";
+            // 
+            // tsmiUserEditor
+            // 
+            this.tsmiUserEditor.Name = "tsmiUserEditor";
+            this.tsmiUserEditor.Size = new System.Drawing.Size(209, 22);
+            this.tsmiUserEditor.Text = "Редактор пользователей";
+            // 
+            // tsmiAbout
+            // 
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAbout.Text = "О программе...";
+            // 
+            // tsmiActivation
+            // 
+            this.tsmiActivation.Name = "tsmiActivation";
+            this.tsmiActivation.Size = new System.Drawing.Size(180, 22);
+            this.tsmiActivation.Text = "Активация";
+            // 
             // PanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -192,5 +431,35 @@
         private System.Windows.Forms.Label lbCaption;
         private System.Windows.Forms.Label lbSystemTime;
         private System.Windows.Forms.Timer timerClock;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCommonView;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLogin;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOtherPrograms;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLogs;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAlarmLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSwitchLog;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAlarmlogStorage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSwitchlogStorage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUserActionslog;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSystemLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiStorage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrends;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTables;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReports;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReportStorage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTuning;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDatabaseEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiStorageGroups;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSystemTuning;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSchemeEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReportEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUserEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
+        private System.Windows.Forms.ToolStripMenuItem tsmiActivation;
     }
 }
