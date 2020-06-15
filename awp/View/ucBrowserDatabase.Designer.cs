@@ -32,17 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBrowserDatabase));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tvDatabase = new System.Windows.Forms.TreeView();
             this.lvTable = new System.Windows.Forms.ListView();
-            this.tsbNewEntity = new System.Windows.Forms.ToolStripButton();
             this.chTag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDescriptor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chChannel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chNode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFetch = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFetchTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsbNewEntity = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiModbusRtuPoints = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAnalogRegister = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDigitalCoil = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFetchChannels = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFetchNodes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEthernet = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -86,25 +93,6 @@
             this.splitContainer1.SplitterDistance = 259;
             this.splitContainer1.TabIndex = 0;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNewEntity});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1016, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 533);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1016, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
             // tvDatabase
             // 
             this.tvDatabase.BackColor = System.Drawing.Color.Black;
@@ -140,16 +128,6 @@
             this.lvTable.UseCompatibleStateImageBehavior = false;
             this.lvTable.View = System.Windows.Forms.View.Details;
             // 
-            // tsbNewEntity
-            // 
-            this.tsbNewEntity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbNewEntity.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewEntity.Image")));
-            this.tsbNewEntity.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNewEntity.Name = "tsbNewEntity";
-            this.tsbNewEntity.Size = new System.Drawing.Size(58, 22);
-            this.tsbNewEntity.Text = "Новый...";
-            this.tsbNewEntity.ToolTipText = "Добавить новую позицию для опроса";
-            // 
             // chTag
             // 
             this.chTag.Text = "Тег";
@@ -181,6 +159,87 @@
             this.chFetchTime.Text = "Время опроса";
             this.chFetchTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNewEntity});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1016, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 533);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1016, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsbNewEntity
+            // 
+            this.tsbNewEntity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbNewEntity.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFetchChannels,
+            this.tsmiFetchNodes,
+            this.tsmiModbusRtuPoints});
+            this.tsbNewEntity.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewEntity.Image")));
+            this.tsbNewEntity.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNewEntity.Name = "tsbNewEntity";
+            this.tsbNewEntity.Size = new System.Drawing.Size(67, 22);
+            this.tsbNewEntity.Text = "Новый...";
+            this.tsbNewEntity.ToolTipText = "Добавить новую позицию для опроса";
+            // 
+            // tsmiModbusRtuPoints
+            // 
+            this.tsmiModbusRtuPoints.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAnalogRegister,
+            this.tsmiDigitalCoil});
+            this.tsmiModbusRtuPoints.Name = "tsmiModbusRtuPoints";
+            this.tsmiModbusRtuPoints.Size = new System.Drawing.Size(211, 22);
+            this.tsmiModbusRtuPoints.Text = "Устройства MODBUS RTU";
+            // 
+            // tsmiAnalogRegister
+            // 
+            this.tsmiAnalogRegister.Name = "tsmiAnalogRegister";
+            this.tsmiAnalogRegister.Size = new System.Drawing.Size(246, 22);
+            this.tsmiAnalogRegister.Text = "Аналоговое значение MODBUS";
+            // 
+            // tsmiDigitalCoil
+            // 
+            this.tsmiDigitalCoil.Name = "tsmiDigitalCoil";
+            this.tsmiDigitalCoil.Size = new System.Drawing.Size(246, 22);
+            this.tsmiDigitalCoil.Text = "Дискретное значение MODBUS";
+            // 
+            // tsmiFetchChannels
+            // 
+            this.tsmiFetchChannels.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEthernet,
+            this.tsmiSerial});
+            this.tsmiFetchChannels.Name = "tsmiFetchChannels";
+            this.tsmiFetchChannels.Size = new System.Drawing.Size(211, 22);
+            this.tsmiFetchChannels.Text = "Каналы связи";
+            // 
+            // tsmiFetchNodes
+            // 
+            this.tsmiFetchNodes.Name = "tsmiFetchNodes";
+            this.tsmiFetchNodes.Size = new System.Drawing.Size(211, 22);
+            this.tsmiFetchNodes.Text = "Полевые узлы";
+            // 
+            // tsmiEthernet
+            // 
+            this.tsmiEthernet.Name = "tsmiEthernet";
+            this.tsmiEthernet.Size = new System.Drawing.Size(180, 22);
+            this.tsmiEthernet.Text = "Ethernet/TCP/UDP";
+            // 
+            // tsmiSerial
+            // 
+            this.tsmiSerial.Name = "tsmiSerial";
+            this.tsmiSerial.Size = new System.Drawing.Size(180, 22);
+            this.tsmiSerial.Text = "RS-232/RS-485";
+            // 
             // ucBrowserDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +247,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucBrowserDatabase";
             this.Size = new System.Drawing.Size(1016, 555);
+            this.Load += new System.EventHandler(this.ucBrowserDatabase_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -208,12 +268,19 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TreeView tvDatabase;
         private System.Windows.Forms.ListView lvTable;
-        private System.Windows.Forms.ToolStripButton tsbNewEntity;
         private System.Windows.Forms.ColumnHeader chTag;
         private System.Windows.Forms.ColumnHeader chDescriptor;
         private System.Windows.Forms.ColumnHeader chChannel;
         private System.Windows.Forms.ColumnHeader chNode;
         private System.Windows.Forms.ColumnHeader chFetch;
         private System.Windows.Forms.ColumnHeader chFetchTime;
+        private System.Windows.Forms.ToolStripDropDownButton tsbNewEntity;
+        private System.Windows.Forms.ToolStripMenuItem tsmiModbusRtuPoints;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAnalogRegister;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDigitalCoil;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFetchChannels;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFetchNodes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEthernet;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSerial;
     }
 }
